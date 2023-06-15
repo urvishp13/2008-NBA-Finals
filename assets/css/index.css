@@ -5,14 +5,26 @@ body {
 /* /////////////// SETTING THE BACKGROUND //////////////// */
 
 .background-container {
-    /* display: flex; */
-    height: 100vh;  /* include in case the svh in bottom line is not supported by browswers */
-    height: 100svh; /* will overwrite the top line if svh is supported by browsers */
+    display: flex;
+    height: calc(100vh - 32px);  /* include in case the svh in bottom line is not supported by browswers */
+    height: calc(100svh - 32px); /* will overwrite the top line if svh is supported by browsers */
 }
 
 .background-lakers {
-    color: yellow;
+    background: #FDB927;
     width: 50%;
+    height: 100%; /* 100% of .background-container */
+}
+
+.background-celtics {
+    background: #008248;
+    width: 50%;
+    height: 100%; /* 100% of .background-container */
+}
+
+/* add transparent effect on top of background colors */
+.background-container .wrapper {
+    background: rgba(255, 255, 255, 0.234);
     height: 100%;
 }
 
