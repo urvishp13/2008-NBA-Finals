@@ -6,8 +6,8 @@ body {
 
 .background-container {
     display: flex;
-    height: calc(100vh - 32px);  /* include in case the svh in bottom line is not supported by browswers */
-    height: calc(100svh - 32px); /* will overwrite the top line if svh is supported by browsers */
+    height: calc(100vh - 32px - 44px);  /* include in case the svh in bottom line is not supported by browswers */
+    height: calc(100svh - 32px - 44px); /* will overwrite the top line if svh is supported by browsers */
 }
 
 .background-lakers {
@@ -26,6 +26,22 @@ body {
 .background-container .wrapper {
     background: rgba(255, 255, 255, 0.234);
     height: 100%;
+}
+
+.background-lakers .logo {
+    background: url("../images/lakers-logo.png");
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+}
+
+.background-celtics .logo {
+    background-image: url("../images/celtics-logo.png");
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
 /* Utility class */
