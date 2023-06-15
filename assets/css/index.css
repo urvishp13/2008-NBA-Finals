@@ -46,6 +46,8 @@ body {
 
 /* //////////// CREATING THE SCOREBOARD BORDER /////////// */
 
+/* position absolute stacks the content on top of its relative parent, so no need of z-index */
+
 .content-container {
     position: relative;
 }
@@ -63,14 +65,13 @@ body {
 
 .scoreboard-borders {
     display: flex;
-    /* height: 100px; */
+    height: 212px; /* subject to change once the scoreboard becomes bigger */
 }
 
 .scoreboard-lakers-side,
 .scoreboard-celtics-side {
     padding: 10px;
     flex: 1 1 calc(65%/2 + 10px);
-    /* height: 100%; */
 }
 
 .scoreboard-lakers-side {
@@ -91,7 +92,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 4;
 }
 
 /* Utility class */
