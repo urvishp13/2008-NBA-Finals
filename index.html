@@ -10,47 +10,50 @@
     <header>
         <h1>2008 NBA Finals Revisited</h1>
     </header>
-    <div class="background-container"> <!-- flex container -->
-        <div class="background-lakers"> 
-            <div class="wrapper">
-                <div class="logo"></div>
+    <div class="content-container">
+        <div class="background-container"> <!-- flex container -->
+            <div class="background-lakers"> 
+                <div class="wrapper">
+                    <div class="logo"></div>
+                </div>
+            </div>
+            <div class="background-celtics"> 
+                <div class="wrapper">
+                    <div class="logo"></div>
+                </div>
+            </div> 
+        </div>
+        <div class="scoreboard-container border-blue"> <!-- give z-index of 3, use to give pseudo-borders of the teams' colors -->
+            <div class="scoreboard-borders">
+                <div class="scoreboard-lakers-side"></div>
+                <div class="scoreboard-celtics-side"></div>
+            </div>
+            <div class="scoreboard border-blue"> <!-- give z-index of 4 -->
+                <div class="live-gameplay-results"></div>
+                <div class="dynamic-elements-container"> <!-- make into a flex container -->
+                    <div class="region">
+                        <p class="display-heading">Me</p>
+                        <div class="points-display"></div>
+                    </div>
+                    <div class="region">
+                        <p class="display-heading">You</p>
+                        <div class="points-display"></div>
+                    </div>
+                    <div class="region">
+                        <p class="display-heading">Possession</p>
+                        <div class="possession-arrow-display"></div>
+                    </div>
+                    <div class="region">
+                        <p class="display-heading">Foul On</p>
+                        <div class="foul-on-display"></div>
+                    </div>
+                    <div class="region">
+                        <button class="game-action"></button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="background-celtics"> 
-            <div class="wrapper">
-                <div class="logo"></div>
-            </div>
-        </div> 
     </div>
-    <div class="scoreboard-container"> <!-- give z-index of 3, use to give pseudo-borders of the teams' colors -->
-        <div class="lakers-side"></div>
-        <div class="celtics-side"></div>
-        <div class="scoreboard"> <!-- give z-index of 4 -->
-            <div class="live-gameplay-results"></div>
-            <div class="dynamic-elements-container"> <!-- make into a flex container -->
-                <div class="region">
-                    <p class="display-heading">Me</p>
-                    <div class="points-display"></div>
-                </div>
-                <div class="region">
-                    <p class="display-heading">You</p>
-                    <div class="points-display"></div>
-                </div>
-                <div class="region">
-                    <p class="display-heading">Possession</p>
-                    <div class="possession-arrow-display"></div>
-                </div>
-                <div class="region">
-                    <p class="display-heading">Foul On</p>
-                    <div class="foul-on-display"></div>
-                </div>
-                <div class="region">
-                    <button class="game-action"></button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <script src="assets/javascript/index.js"></script>
 </body>

@@ -44,8 +44,55 @@ body {
     margin: 0 auto; /* needed this because width of image is no longer 100% */
 }
 
-/* //////////// CREATING THE BORDER OF THE SCOREBOARD /////////// */
+/* //////////// CREATING THE SCOREBOARD BORDER /////////// */
 
+.content-container {
+    position: relative;
+}
+
+.scoreboard-container {
+    margin: 0 auto;
+    width: 50%;
+    position: absolute;
+    /* center the container relative to the overall webpage */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* height: 100%; */
+}
+
+.scoreboard-borders {
+    display: flex;
+    /* height: 100px; */
+}
+
+.scoreboard-lakers-side,
+.scoreboard-celtics-side {
+    padding: 10px;
+    flex: 1 1 calc(65%/2 + 10px);
+    /* height: 100%; */
+}
+
+.scoreboard-lakers-side {
+    background: #552583;
+}
+
+.scoreboard-celtics-side {
+    background: #008248;
+}
+
+
+.scoreboard {
+    background: white;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    position: absolute;
+    /* center the container relative to the scoreboard-container */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
 
 /* Utility class */
 .border-blue {
