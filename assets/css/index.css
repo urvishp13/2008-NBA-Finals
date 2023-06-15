@@ -5,9 +5,9 @@ body {
 /* /////////////// SETTING THE BACKGROUND //////////////// */
 
 .background-container {
-    display: flex;
-    height: calc(100vh - 32px - 44px);  /* include in case the svh in bottom line is not supported by browswers */
-    height: calc(100svh - 32px - 44px); /* will overwrite the top line if svh is supported by browsers */
+    display: flex; /* made into a flex container to put the halves of the teams side-by-side, did this rather than floating */
+    height: calc(100vh - 76px);  /* include in case the svh in bottom line is not supported by browsers, subtracted h1 dimensions */
+    height: calc(100svh - 76px); /* will overwrite the top line if svh is supported by browsers, subtracted h1 dimensions */
 }
 
 .background-lakers {
@@ -41,8 +41,11 @@ body {
     height: 100%;
     background-position: center;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto; /* needed this because width of image is no longer 100% */
 }
+
+/* //////////// CREATING THE BORDER OF THE SCOREBOARD /////////// */
+
 
 /* Utility class */
 .border-blue {
