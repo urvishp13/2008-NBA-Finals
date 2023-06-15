@@ -10,16 +10,18 @@
     <header>
         <h1>2008 NBA Finals Revisited</h1>
     </header>
-    <div class="background-container lakers"> <!-- give z-index of 1 -->
-        <div class="logo"></div>
+    <div class="background-container border-blue">
+        <div class="background-lakers"> <!-- give z-index of 1 -->
+            <div class="logo"></div> <!-- give z-index of 2 -->
+        </div>
+        <div class="background-celtics"> <!-- give z-index of 1 -->
+            <div class="logo"></div> <!-- give z-index of 2 -->
+        </div> 
     </div>
-    <div class="background-container celtics"> <!-- give z-index of 1 -->
-        <div class="logo"></div>
-    </div> 
-    <div class="scoreboard-container"> <!-- give z-index of 2, use to give pseudo-borders of the teams' colors -->
+    <div class="scoreboard-container"> <!-- give z-index of 3, use to give pseudo-borders of the teams' colors -->
         <div class="lakers-side"></div>
         <div class="celtics-side"></div>
-        <div class="scoreboard"> <!-- give z-index of 3 -->
+        <div class="scoreboard"> <!-- give z-index of 4 -->
             <div class="live-gameplay-results"></div>
             <div class="dynamic-elements-container"> <!-- make into a flex container -->
                 <div class="region">

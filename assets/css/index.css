@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+}
+
+/* /////////////// SETTING THE BACKGROUND //////////////// */
+
+.background-container {
+    /* display: flex; */
+    height: 100vh;  /* include in case the svh in bottom line is not supported by browswers */
+    height: 100svh; /* will overwrite the top line if svh is supported by browsers */
+}
+
+.background-lakers {
+    color: yellow;
+    width: 50%;
+    height: 100%;
+}
+
+/* Utility class */
+.border-blue {
+    border: 1px solid blue;
+}
