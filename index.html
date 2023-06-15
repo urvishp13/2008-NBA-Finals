@@ -3,10 +3,48 @@
 
 <head>
     <link rel="stylesheet" href="assets/css/index.css">
-    <title>2008 NBA Finals</title>
+    <title>2008 NBA Finals Revisited</title>
 </head>
 
 <body>
+    <header>
+        <h1>2008 NBA Finals Revisited</h1>
+    </header>
+    <div class="background-container lakers"> <!-- give z-index of 1 -->
+        <div class="logo"></div>
+    </div>
+    <div class="background-container celtics"> <!-- give z-index of 1 -->
+        <div class="logo"></div>
+    </div> 
+    <div class="scoreboard-container"> <!-- give z-index of 2, use to give pseudo-borders of the teams' colors -->
+        <div class="lakers-side"></div>
+        <div class="celtics-side"></div>
+        <div class="scoreboard"> <!-- give z-index of 3 -->
+            <div class="live-gameplay-results"></div>
+            <div class="dynamic-elements-container"> <!-- make into a flex container -->
+                <div class="region">
+                    <h3>Me</h3>
+                    <div class="points-display"></div>
+                </div>
+                <div class="region">
+                    <h3>You</h3>
+                    <div class="points-display"></div>
+                </div>
+                <div class="region">
+                    <h3>Possession</h3>
+                    <div class="possession-arrow-display"></div>
+                </div>
+                <div class="region">
+                    <h3>Foul On</h3>
+                    <div class="foul-on-display"></div>
+                </div>
+                <div class="region">
+                    <button class="game-action"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="assets/javascript/index.js"></script>
 </body>
