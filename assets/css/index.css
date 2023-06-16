@@ -1,11 +1,18 @@
 @font-face {
-    font-family: "AdvancedLedBoard7";
-    src: url("../fonts/advanced_led_board-7.ttf") format("ttf");
+    font-family: AdvancedLedBoard7;
+    src: url("../fonts/advanced_led_board-7.ttf");
 }
 
 body {
     margin: 0;
     text-align: center;
+    color: #111827;
+}
+
+h1 {
+    margin: 0;
+    padding: 21px;
+    background: #F9FAFB;
 }
 
 /* /////////////// SETTING THE BACKGROUND //////////////// */
@@ -71,7 +78,7 @@ body {
 
 .scoreboard-borders {
     display: flex;
-    height: 492px; /* subject to change once the scoreboard becomes bigger */
+    height: 502px; /* subject to change once the scoreboard becomes bigger */
 }
 
 .scoreboard-lakers-side,
@@ -90,7 +97,7 @@ body {
 
 
 .scoreboard {
-    background: whitesmoke;
+    background: #F9FAFB;
     margin: 0 auto;
     width: calc(100% - 40px);
     position: absolute;
@@ -126,11 +133,22 @@ body {
 }
 
 .display {
-    width: 100px;
+    width: 150px;
     height: 100px;
-    border: 3px solid black;
-    background: white;
-    font-family: "AdvancedLedBoard7"
+    border: 3px solid #111827;
+    background: #F9FAFB;
+}
+
+/* ////////// STYLING THE CONTENT INSIDE DISPLAYS ///////// */
+
+.display-content {
+    font-family: AdvancedLedBoard7;
+    font-size: 80px;
+    width: 125px;
+    height: 100px;
+    margin: 0 auto;
+    line-height: 100px;
+    color: #BE123C;
 }
 
 .game-action-btn {
@@ -139,7 +157,7 @@ body {
     background: #c9082a;
     border: 3px solid #17408b;
     border-radius: 3px;
-    color: whitesmoke;
+    color: #F9FAFB;
     font-size: 20px;
 }
 
