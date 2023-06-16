@@ -113,20 +113,59 @@ body {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
+    background: rgb(212, 212, 212);
 }
 
 .display-heading {
-    margin: 0;
+    margin-top: 0;
 }
 
 .display {
     width: 100px;
     height: 100px;
-    border: 1px solid black;
+    border: 3px solid black;
+    background: white;
+}
+
+.game-action-btn {
+    width: 75%;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.region .nba-logo {
+    background-image: url("../images/nba-logo.png");
+    background-size: cover;
+    /* height: 100%; */
+    background-position: center;
 }
 
 .live-gameplay-results {
     margin-top: 0;
+}
+
+.region-1 {
+    order: 1;
+}
+
+.region-2 {
+    order: 3;
+}
+
+.region-3 {
+    order: 2;
+}
+
+.region-4 {
+    order: 5;
+}
+
+.region-5 {
+    order: 6;
+}
+
+.region-6 {
+    order: 4;
 }
 
 
