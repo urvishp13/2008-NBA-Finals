@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "AdvancedLedBoard7";
+    src: url("../fonts/advanced_led_board-7.ttf") format("ttf");
+}
+
 body {
     margin: 0;
     text-align: center;
@@ -125,6 +130,7 @@ body {
     height: 100px;
     border: 3px solid black;
     background: white;
+    font-family: "AdvancedLedBoard7"
 }
 
 .game-action-btn {
