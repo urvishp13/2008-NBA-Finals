@@ -128,59 +128,6 @@ h1 {
     background: rgb(212, 212, 212);
 }
 
-.display-heading {
-    margin-top: 0;
-}
-
-.display {
-    width: 150px;
-    height: 100px;
-    border: 3px solid #111827;
-    background: #F9FAFB;
-}
-
-/* ////////// STYLING THE CONTENT INSIDE DISPLAYS ///////// */
-
-.display-content {
-    font-family: AdvancedLedBoard7;
-    font-size: 80px;
-    width: 125px;
-    height: 100px;
-    margin: 0 auto;
-    line-height: 100px;
-    color: #BE123C;
-}
-
-button {
-    padding: 10px 20px;
-    background: #c9082a;
-    border: 3px solid #17408b;
-    border-radius: 3px;
-    color: #F9FAFB;
-    font-size: 20px;
-    width: 90%;
-    margin: 5px;
-}
-
-.defend-btn {
-    display: none;
-}
-
-.nba-logo {
-    background-image: url("../images/nba-logo.png");
-    background-size: contain;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.live-gameplay-results {
-    margin-top: 0;
-    font-weight: bold;
-    font-size: 20px;
-}
-
 .region-1 {
     order: 1;
 }
@@ -205,6 +152,62 @@ button {
     order: 4;
 }
 
+.display-heading {
+    margin-top: 0;
+}
+
+.display {
+    width: 150px;
+    height: 100px;
+    border: 3px solid #111827;
+    background: #F9FAFB;
+}
+
+/* ////////// STYLING THE CONTENT INSIDE DISPLAYS ///////// */
+
+.display-content {
+    font-family: AdvancedLedBoard7;
+    font-size: 80px;
+    width: 125px;
+    height: 100px;
+    margin: 0 auto;
+    line-height: 100px;
+    color: #BE123C;
+}
+
+/* ////////////// BUTTON(S) RELATED /////////////////////// */
+
+button {
+    padding: 10px 20px;
+    background: #c9082a;
+    border: 3px solid #17408b;
+    border-radius: 3px;
+    color: #F9FAFB;
+    font-size: 20px;
+    width: 90%;
+    margin: 5px;
+}
+
+.defend-btn {
+    display: none;
+}
+
+/* ////////////// MISCELLANEOUS STUFF //////////// */
+
+.nba-logo {
+    background-image: url("../images/nba-logo.png");
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.live-gameplay-results {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 /* Utility class */
 .border-blue {
