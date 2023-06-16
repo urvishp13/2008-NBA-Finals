@@ -66,7 +66,7 @@ body {
 
 .scoreboard-borders {
     display: flex;
-    height: 212px; /* subject to change once the scoreboard becomes bigger */
+    height: 492px; /* subject to change once the scoreboard becomes bigger */
 }
 
 .scoreboard-lakers-side,
@@ -80,12 +80,12 @@ body {
 }
 
 .scoreboard-celtics-side {
-    background: #008248;
+    background: #006739;
 }
 
 
 .scoreboard {
-    background: white;
+    background: whitesmoke;
     margin: 0 auto;
     width: calc(100% - 40px);
     position: absolute;
@@ -128,9 +128,13 @@ body {
 }
 
 .game-action-btn {
-    width: 75%;
+    /* width: 75%; */
     padding: 10px 20px;
-    background-color: white;
+    background: #c9082a;
+    border: 3px solid #17408b;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-size: 20px;
 }
 
 .nba-logo {
@@ -144,6 +148,8 @@ body {
 
 .live-gameplay-results {
     margin-top: 0;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .region-1 {
