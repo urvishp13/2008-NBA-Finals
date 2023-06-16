@@ -151,14 +151,19 @@ h1 {
     color: #BE123C;
 }
 
-.game-action-btn {
-    /* width: 75%; */
+button {
     padding: 10px 20px;
     background: #c9082a;
     border: 3px solid #17408b;
     border-radius: 3px;
     color: #F9FAFB;
     font-size: 20px;
+    width: 90%;
+    margin: 5px;
+}
+
+.defend-btn {
+    display: none;
 }
 
 .nba-logo {
