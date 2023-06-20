@@ -17,7 +17,7 @@ function startGame() {
     // YOU has 3 opportunities to score: call action function
 }
 
-// create an action function (for dribbling/defending)
+// create a dribble function 
 function dribble() {
     me = Math.floor( Math.random() * 61 ) - 10
     // if YOU have ball, ME gets to stop you 3 times (defend), so YOU are dribbling
@@ -43,3 +43,23 @@ function dribble() {
     }
 }
      
+// create a defend function --> opposite of dribble function i.e. ME has the ball now and YOU are defending
+function dribble() {
+    you = Math.floor( Math.random() * 61 ) - 10
+    
+    for (let i = 0; i < 3; i++) {
+        me += Math.floor( Math.random() * 31 ) - 5
+    }
+
+    if ( (me - you) >= 10 ) { // ME scores 3 points
+        meDisp.textContent = parseInt(meDisp.textContent) + 3
+    } else if (me > you) { // ME scores 2 points
+        meDisp.textContent = parseInt(meDisp.textContent) + 2
+    } else if (you < 0) { // YOU foul
+        meDisp.textContent = parseInt(meDisp.textContent) + 1
+    } else if (me < 0) { // ME causes turnover
+        dribble()
+    } else { // me < you --> change in possession
+        dribble()
+    }
+}
