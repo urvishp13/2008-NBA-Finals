@@ -61,6 +61,7 @@ function dribble() {
         // change possession --> give ME the ball after YOU shoots free throws
         foul("ME")
         changePossession("ME")
+        return
     }
 
     // if YOU dribbled 3 times, YOU have to shoot
