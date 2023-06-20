@@ -19,17 +19,17 @@ let click = 0
 function dribble() {
     // YOU have ball, so ME gets to stop you 3 times (defend) aka YOU get to dribble 3 times to score
     // with each dribble (click of button), add one random number to YOU (between -5 and 25)
-    click++ // function ran, so one dribble recorded
-    if (click <= 3) {
-        const currDribble = Math.floor( Math.random() * 31 ) - 5
+    
+    click++ // function ran, so one dribble button click counted
 
-        if (currDribble < 0) { // if YOU randomly get a negative number of this dribble
-            turnover("YOU")         // YOU caused a turnover
-            return             // possession over
-        }
+    const currDribble = Math.floor( Math.random() * 31 ) - 5
 
-        you += currDribble
+    if (currDribble < 0) { // if YOU randomly get a negative number of this dribble
+        turnover("YOU")    // YOU caused a turnover
+        return             // possession over
     }
+
+    you += currDribble
 
     console.log("click", click, ", me", me, ", you", you)
 
@@ -42,6 +42,7 @@ function dribble() {
     // if YOU dribbled 3 times, YOU have to shoot
     if (click === 3) {
         shoot()
+        click = 0 // reset the DRIBBLE click count
     }
 }
      
