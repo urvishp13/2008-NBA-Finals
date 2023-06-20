@@ -1,5 +1,3 @@
-let you
-let me
 const youDisp = document.getElementById("you-points")
 const meDisp = document.getElementById("me-points")
 
@@ -14,29 +12,6 @@ function startGame() {
     meDisp.textContent = 0
 
     newPossession("YOU")
-}
-
-function newPossession(dribbler) {
-    if (dribbler === "YOU") {
-        you = givePossessionTo()
-        me = putOnDefense()
-    }
-    else {
-        me = givePossessionTo()
-        you = putOnDefense()
-    }
-}
-
-function givePossessionTo() {
-    return 0
-}
-
-function putOnDefense() {
-    return Math.floor( Math.random() * 61 ) - 10
-}
-
-function changePossession(newDribbler) {
-    newPossession(newDribbler)
 }
 
 let click = 0
@@ -56,6 +31,8 @@ function dribble() {
         you += currDribble
     }
 
+    console.log("click", click, ", me", me, ", you", you)
+
     // if ME committed a foul while YOU were dribbling
     if (me < 0) {
         foul("ME")
@@ -65,36 +42,6 @@ function dribble() {
     // if YOU dribbled 3 times, YOU have to shoot
     if (click === 3) {
         shoot()
-    }
-}
-
-function foul(committer) {
-    if (committer === "ME") { // if ME committed foul
-        youDisp.textContent = Number(youDisp.textContent) + 1 // YOU are allowed to shoot free throws
-    }
-    changePossession(committer) // give the ball to foul committer after YOU shot free throws
-}
-
-function shoot() {
-    // if after 3 dribbles
-        // YOU > ME by 10, 3 points scored by YOU
-        // YOU > ME by 1, 2 points scored by YOU
-    // change possession after every shot, regardless of if YOU scored points
-    if ( (you - me) >= 10 ) {
-        youDisp.textContent = Number(youDisp.textContent) + 3
-    } else if (you > me) {
-        youDisp.textContent = Number(youDisp.textContent) + 2
-    }
-    // change in possession
-    changePossession("ME")
-}
-
-function turnover(violator) {
-    // change of possession
-    if (violator === "YOU") {
-        changePossession("ME") 
-    } else {
-        changePossession("YOU")
     }
 }
      
