@@ -63,8 +63,10 @@ function dribble() {
         changePossession("ME")
     }
 
-    // console.log("click", click)
-    // console.log("me", me, "you", you)
+    // if YOU dribbled 3 times, YOU have to shoot
+    if (click === 3) {
+        shoot()
+    }
 }
 
 function foul(committer) {
@@ -77,8 +79,7 @@ function shoot() {
     // if after 3 dribbles
         // YOU > ME by 10, 3 points scored by YOU
         // YOU > ME by 1, 2 points scored by YOU
-        // If ME is negative, YOU get one point (ME committed a foul)
-        // If YOU are negative, YOU committed a turnover
+    // change possession after every shot, regardless of if YOU scored points
     if ( (you - me) >= 10 ) {
         youDisp.textContent = Number(youDisp.textContent) + 3
     } else if (you > me) {
