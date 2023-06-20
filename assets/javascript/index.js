@@ -58,9 +58,7 @@ function dribble() {
 
     // if ME committed a foul while YOU were dribbling
     if (me < 0) {
-        // change possession --> give ME the ball after YOU shoots free throws
         foul("ME")
-        changePossession("ME")
         return
     }
 
@@ -71,9 +69,10 @@ function dribble() {
 }
 
 function foul(committer) {
-    if (committer === "ME") {
-        youDisp.textContent = Number(youDisp.textContent) + 1
+    if (committer === "ME") { // if ME committed foul
+        youDisp.textContent = Number(youDisp.textContent) + 1 // YOU are allowed to shoot free throws
     }
+    changePossession(committer) // give the ball to foul committer after YOU shot free throws
 }
 
 function shoot() {
