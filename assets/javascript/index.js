@@ -12,8 +12,18 @@ function startGame() {
        is displayed */
     youDisp.textContent = 0
     meDisp.textContent = 0
-    you = 0
-    me = Math.floor( Math.random() * 61 ) - 10 // give me an initial number to start game
+    
+    putOnDefense(me)
+    you = givePossessionTo()
+    me = putOnDefense() // give me an initial number to start game
+}
+
+function givePossessionTo(player) {
+    return 0
+}
+
+function putOnDefense() {
+    return Math.floor( Math.random() * 61 ) - 10
 }
 
 let click = 0
@@ -34,17 +44,17 @@ function dribble() {
         // YOU > ME by 1 or more points, 2 points scored by YOU
         // If ME is negative, YOU get one point (ME committed a foul)
         // If YOU are negative, YOU committed a turnover
-    // if ( (you - me) >= 10 ) {
-    //     youDisp.textContent = parseInt(youDisp.textContent) + 3
-    // } else if (you > me) {
-    //     youDisp.textContent = parseInt(youDisp.textContent) + 2
-    // } else if (me < 0) {
-    //     youDisp.textContent = parseInt(youDisp.textContent) + 1
-    // } else if (you < 0) {
-    //     defend()
-    // } else { // you < me --> change in possession
-    //     defend()
-    // }
+    if ( (you - me) >= 10 ) {
+        youDisp.textContent = parseInt(youDisp.textContent) + 3
+    } else if (you > me) {
+        youDisp.textContent = parseInt(youDisp.textContent) + 2
+    } else if (me < 0) {
+        youDisp.textContent = parseInt(youDisp.textContent) + 1
+    } else if (you < 0) {
+        defend()
+    } else { // you < me --> change in possession
+        defend()
+    }
 }
      
 // create a defend function --> opposite of dribble function i.e. ME has the ball now and YOU are defending
