@@ -1,6 +1,3 @@
-let you = 0;
-let me = 0;
-
 const youDisp = document.getElementById("you-points")
 const meDisp = document.getElementById("me-points")
 
@@ -9,23 +6,22 @@ const meDisp = document.getElementById("me-points")
 
 // create a start game function
 function startGame() {
-    /* first possession always is given to YOU (the player) */
-    // give YOU a random number between -5 and 25 --> dribbling
-    // you = Math.floor( Math.random() * 31 ) - 5
-    // give ME (the computer) a random number between -10 and 50 --> defending
-    // me = Math.floor( Math.random() * 61 ) - 10
-    // YOU has 3 opportunities to score: call action function
+    /* first possession always is given to YOU (the game player) */
+    dribble()
 }
 
 // create a dribble function 
 function dribble() {
-    me = Math.floor( Math.random() * 61 ) - 10
+    const me = Math.floor( Math.random() * 61 ) - 10
+    let you = 0
+    
     // if YOU have ball, ME gets to stop you 3 times (defend), so YOU are dribbling
         // with each dribble, add one random number to ME (between -5 and 25)
     for (let i = 0; i < 3; i++) {
         you += Math.floor( Math.random() * 31 ) - 5
     }
-    // if after 3 times
+
+    // if after 3 dribbles
         // YOU > ME by 10 or more points, 3 points scored by YOU
         // YOU > ME by 1 or more points, 2 points scored by YOU
         // If ME is negative, YOU get one point (ME committed a foul)
@@ -45,8 +41,9 @@ function dribble() {
      
 // create a defend function --> opposite of dribble function i.e. ME has the ball now and YOU are defending
 function dribble() {
-    you = Math.floor( Math.random() * 61 ) - 10
-    
+    const you = Math.floor( Math.random() * 61 ) - 10
+    let me = 0
+
     for (let i = 0; i < 3; i++) {
         me += Math.floor( Math.random() * 31 ) - 5
     }
