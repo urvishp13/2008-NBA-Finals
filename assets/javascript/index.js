@@ -6,14 +6,13 @@ function startGame() {
     meDisp.textContent = 0
 
     newPossession("YOU")
-    
+
     // make the NEW GAME button disappear
     newGameBtn.style.display = "none"
     // make the offensive buttons appear
     offenseBtns.style.display = "flex"
 }
 
-let click = 0
 // create a dribble function 
 function dribble() {
     // YOU have ball, so ME gets to stop you 3 times (defend) aka YOU get to dribble 3 times to score
