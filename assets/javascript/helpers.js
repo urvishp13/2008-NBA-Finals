@@ -11,10 +11,13 @@ function newPossession(dribbler) {
     if (dribbler === "YOU") {
         you = givePossessionTo()
         me = putOnDefense()
+        replaceDefenseBtns() // put YOU on offense
     }
     else {
         me = givePossessionTo()
         you = putOnDefense()
+        replaceOffenseBtns() // put YOU on defense
+        
     }
 }
 
@@ -73,8 +76,6 @@ function shoot(num) {
 
     // after shot taken, give the ball to ME
     changePossession("ME")
-
-    replaceOffenseBtns()
 }
 
 // swap the buttons for defensive play
@@ -94,10 +95,8 @@ function replaceDefenseBtns() {
 function turnover(violator) {
     // change of possession
     if (violator === "YOU") {
-        replaceOffenseBtns() // put YOU on defense
         changePossession("ME") 
     } else {
-        replaceDefenseBtns() //put YOU on offense
         changePossession("YOU")
     }
 }

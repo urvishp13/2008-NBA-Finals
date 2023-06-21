@@ -42,8 +42,6 @@ function dribble() {
     if (click === 3) {
         forcedShot("YOU")
         click = 0 // reset the click count --> preparing to count defend count
-        // remove the offense buttons from the DOM and replace it with the DEFEND button
-        replaceOffenseBtns()
     }
 }
      
@@ -51,7 +49,8 @@ function dribble() {
 function defend() {
     click++
 
-    const currDribble = Math.floor( Math.random() * 31 ) - 5
+    // const currDribble = Math.floor( Math.random() * 31 ) - 5
+    const currDribble = -1
     
     console.log("click", click, ", you", you, ", me", me)
     
@@ -72,6 +71,5 @@ function defend() {
     if (click === 3) {
         forcedShot("ME")
         click = 0 // reset the click count --> preparing to count dribble count
-        replaceDefenseBtns()
     }
 }
