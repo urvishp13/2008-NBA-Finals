@@ -187,6 +187,12 @@ button {
     cursor: pointer;
 }
 
+#offense-btns,
+#defend-btn,
+#free-throw-btn {
+    display: none;
+}
+
 #offense-btns {
     flex-wrap: wrap;
     gap: 10px;
@@ -196,10 +202,6 @@ button {
 #dribble-btn,
 .shot {
     flex-grow: 1;
-}
-
-#defend-btn {
-    display: none;
 }
 
 /* ////////////// MISCELLANEOUS STUFF //////////// */

@@ -6,6 +6,7 @@ const newGameBtn = document.getElementById("new-game-btn")
 const offenseBtns = document.getElementById("offense-btns")
 const dribbleBtn = document.getElementById("dribble-btn")
 const defendBtn = document.getElementById("defend-btn")
+const freeThrowBtn = document.getElementById("free-throw-btn")
 const liveResults = document.getElementById("live-gameplay-results")
 const possessionDisp = document.getElementById("possession")
 
@@ -29,7 +30,8 @@ function givePossessionTo() {
 }
 
 function putOnDefense() {
-    return Math.floor( Math.random() * 61 ) - 10
+    // return Math.floor( Math.random() * 61 ) - 10
+    return -1
 }
 
 function changePossession(newDribbler) {
@@ -101,9 +103,29 @@ function turnover(committer) {
 function foul(violator) {
     liveResults.textContent = `${violator} committed a foul.`
     if (violator === "ME") { // if ME committed foul
-        youDisp.textContent = Number(youDisp.textContent) + 1 // YOU are allowed to shoot free throws
-    } else {
-        meDisp.textContent = Number(meDisp.textContent) + 1
+        // give YOU 2 free shots
+        freeThrowBtn.style.display = "block" // make the SHOOT FT button present
+        for (let shot = 1; shot <= 2; shot++) {
+            youDisp.textContent = Number(youDisp.textContent) + shootFreeThrow("YOU") // YOU are allowed to shoot free throws
+            liveResults.textContent = `${shooter} made a ${shot} free throw(s).`
+        }
+    } else { // YOU committed foul
+        // give ME 2 free shots
+        for (let shot = 1; shot <= 2; shot++) {
+            meDisp.textContent = Number(meDisp.textContent) + shootFreeThrow("ME") // ME is allowed to shoot free throws
+            liveResults.textContent = `${shooter} made a ${shot} free throw(s).`
+        }
     }
+    freeThrowBtn.style.display = "none" // remove the SHOOT FT button
     changePossession(violator) // give the ball to foul violator after YOU shot free throws
+}
+
+function shootFreeThrow(shooter) {
+    // get the probability of shot being successful
+    const probability = Math.random()
+
+    // if the probability > 0.5, shot is made. Increase YOUR score by num
+    if (probability > 0.5) {
+        return 1
+    }
 }
