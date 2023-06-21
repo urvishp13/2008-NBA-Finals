@@ -184,13 +184,18 @@ button {
     border-radius: 3px;
     color: #F9FAFB;
     font-size: 20px;
-    width: 90%;
-    margin: 5px;
     cursor: pointer;
 }
 
-.dribble-btn {
-    cursor: not-allowed;
+.offense-btns {
+    flex-wrap: wrap;
+    gap: 10px;
+    display: none;
+}
+
+.dribble-btn,
+.shot {
+    flex-grow: 1;
 }
 
 .defend-btn {

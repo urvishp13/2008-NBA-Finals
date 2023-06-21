@@ -1,6 +1,7 @@
 const youDisp = document.getElementById("you-points")
 const meDisp = document.getElementById("me-points")
-const dribbleBtn = document.querySelector(".dribble-btn")
+const newGameBtn = document.querySelector(".new-game-btn")
+const offenseBtns = document.querySelector(".offense-btns")
 const defendBtn = document.querySelector(".defend-btn")
 
 // console.log(meDisp)
@@ -15,10 +16,10 @@ function startGame() {
 
     newPossession("YOU")
 
-    // enable the dribble button
-    dribbleBtn.disabled = false
-    dribbleBtn.style.cursor = "pointer"
-    dribbleBtn.title = ""
+    // make the NEW GAME button disappear
+    newGameBtn.style.display = "none"
+    // make the offensive buttons appear
+    offenseBtns.style.display = "flex"
 }
 
 let click = 0
