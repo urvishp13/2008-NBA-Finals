@@ -1,5 +1,7 @@
 const youDisp = document.getElementById("you-points")
 const meDisp = document.getElementById("me-points")
+const dribbleBtn = document.querySelector(".dribble-btn")
+const defendBtn = document.querySelector(".defend-btn")
 
 // console.log(meDisp)
 
@@ -12,6 +14,11 @@ function startGame() {
     meDisp.textContent = 0
 
     newPossession("YOU")
+
+    // enable the dribble button
+    dribbleBtn.disabled = false
+    dribbleBtn.style.cursor = "pointer"
+    dribbleBtn.title = ""
 }
 
 let click = 0
@@ -20,7 +27,7 @@ function dribble() {
     // YOU have ball, so ME gets to stop you 3 times (defend) aka YOU get to dribble 3 times to score
     // with each dribble (click of button), add one random number to YOU (between -5 and 25)
     
-    click++ // function ran, so one dribble button click counted
+    click++ // function ran, so one DRIBBLE button click counted
 
     const currDribble = Math.floor( Math.random() * 31 ) - 5
 
@@ -43,6 +50,9 @@ function dribble() {
     if (click === 3) {
         shoot()
         click = 0 // reset the DRIBBLE click count
+        // remove the DRIBBLE button from the DOM and replace it with the DEFEND button
+        dribbleBtn.style.display = "none"
+        defendBtn.style.display = "block"
     }
 }
      

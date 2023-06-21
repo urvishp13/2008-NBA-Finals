@@ -186,6 +186,11 @@ button {
     font-size: 20px;
     width: 90%;
     margin: 5px;
+    cursor: pointer;
+}
+
+.dribble-btn {
+    cursor: not-allowed;
 }
 
 .defend-btn {
