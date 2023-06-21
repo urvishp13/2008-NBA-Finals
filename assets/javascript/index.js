@@ -1,8 +1,8 @@
 const youDisp = document.getElementById("you-points")
 const meDisp = document.getElementById("me-points")
-const newGameBtn = document.querySelector(".new-game-btn")
-const offenseBtns = document.querySelector(".offense-btns")
-const defendBtn = document.querySelector(".defend-btn")
+const newGameBtn = document.getElementById("new-game-btn")
+const offenseBtns = document.getElementById("offense-btns")
+const defendBtn = document.getElementById("defend-btn")
 
 // console.log(meDisp)
 
