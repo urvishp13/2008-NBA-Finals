@@ -37,18 +37,28 @@ function foul(committer) {
     changePossession(committer) // give the ball to foul committer after YOU shot free throws
 }
 
-function forcedShot() {
+function forcedShot(shooter) {
     // if after 3 dribbles
         // YOU > ME by 10, 3 points scored by YOU
         // YOU > ME by 1, 2 points scored by YOU
     // change possession after every shot, regardless of if YOU scored points
-    if ( (you - me) >= 10 ) {
-        youDisp.textContent = Number(youDisp.textContent) + 3
-    } else if (you > me) {
-        youDisp.textContent = Number(youDisp.textContent) + 2
+    if (shooter === "YOU") {
+        if ( (you - me) >= 10 ) {
+            youDisp.textContent = Number(youDisp.textContent) + 3
+        } else if (you > me) {
+            youDisp.textContent = Number(youDisp.textContent) + 2
+        }
+        // change in possession
+        changePossession("ME")
+    } else {
+        if ( (me - you) >= 10 ) {
+            meDisp.textContent = Number(meDisp.textContent) + 3
+        } else if (me > you) {
+            meDisp.textContent = Number(meDisp.textContent) + 2
+        }
+        // change in possession
+        changePossession("YOU")
     }
-    // change in possession
-    changePossession("ME")
 }
 
 // this shot can be done before 3 dribbles are completed
@@ -74,11 +84,20 @@ function replaceOffenseBtns() {
     defendBtn.style.display = "block"
 }
 
+// swap the buttons for offensive play
+function replaceDefenseBtns() {
+    // remove the DEFEND button from the DOM and replace it with the offensive buttons
+    defendBtn.style.display = "none"
+    offenseBtns.style.display = "flex"
+}
+
 function turnover(violator) {
     // change of possession
     if (violator === "YOU") {
+        replaceOffenseBtns() // put YOU on defense
         changePossession("ME") 
     } else {
+        replaceDefenseBtns() //put YOU on offense
         changePossession("YOU")
     }
 }

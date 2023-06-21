@@ -22,7 +22,7 @@ function dribble() {
     click++ // function ran, so one DRIBBLE button click counted
 
     const currDribble = Math.floor( Math.random() * 31 ) - 5
-
+    
     if (currDribble < 0) { // if YOU randomly get a negative number of this dribble
         turnover("YOU")    // YOU caused a turnover
         return             // possession over
@@ -40,31 +40,38 @@ function dribble() {
 
     // if YOU dribbled 3 times, YOU have to shoot
     if (click === 3) {
-        forcedShot()
-        click = 0 // reset the DRIBBLE click count
+        forcedShot("YOU")
+        click = 0 // reset the click count --> preparing to count defend count
         // remove the offense buttons from the DOM and replace it with the DEFEND button
         replaceOffenseBtns()
     }
 }
      
-// // create a defend function --> opposite of dribble function i.e. ME has the ball now and YOU are defending
-// function defend() {
-//     const you = Math.floor( Math.random() * 61 ) - 10
-//     let me = 0
+// create a defend function --> opposite of dribble function i.e. ME has the ball now and YOU are defending
+function defend() {
+    click++
 
-//     for (let i = 0; i < 3; i++) {
-//         me += Math.floor( Math.random() * 31 ) - 5
-//     }
+    const currDribble = Math.floor( Math.random() * 31 ) - 5
+    
+    console.log("click", click, ", you", you, ", me", me)
+    
+    if (currDribble < 0) { 
+        turnover("ME")    
+        return
+    }
 
-//     if ( (me - you) >= 10 ) { // ME scores 3 points
-//         meDisp.textContent = Number(meDisp.textContent) + 3
-//     } else if (me > you) { // ME scores 2 points
-//         meDisp.textContent = Number(meDisp.textContent) + 2
-//     } else if (you < 0) { // YOU foul
-//         meDisp.textContent = Number(meDisp.textContent) + 1
-//     } else if (me < 0) { // ME causes turnover
-//         dribble()
-//     } else { // me < you --> change in possession
-//         dribble()
-//     }
-// }
+    me += currDribble
+
+    // console.log("click", click, ", you", you, ", me", me)
+
+    if (you < 0) {
+        foul("YOU")
+        return
+    }
+
+    if (click === 3) {
+        forcedShot("ME")
+        click = 0 // reset the click count --> preparing to count dribble count
+        replaceDefenseBtns()
+    }
+}
