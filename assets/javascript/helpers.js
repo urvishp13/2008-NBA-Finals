@@ -36,13 +36,6 @@ function changePossession(newDribbler) {
     newPossession(newDribbler)
 }
 
-function foul(committer) {
-    if (committer === "ME") { // if ME committed foul
-        youDisp.textContent = Number(youDisp.textContent) + 1 // YOU are allowed to shoot free throws
-    }
-    changePossession(committer) // give the ball to foul committer after YOU shot free throws
-}
-
 function forcedShot(shooter) {
     // if after 3 dribbles
         // YOU > ME by 10, 3 points scored by YOU
@@ -95,12 +88,22 @@ function replaceDefenseBtns() {
     offenseBtns.style.display = "flex"
 }
 
-function turnover(violator) {
-    liveResults.textContent = `${violator} turned the ball over.`
+function turnover(committer) {
+    liveResults.textContent = `${committer} turned the ball over.`
     // change of possession
-    if (violator === "YOU") {
+    if (committer === "YOU") {
         changePossession("ME") 
     } else {
         changePossession("YOU")
     }
+}
+
+function foul(violator) {
+    liveResults.textContent = `${violator} committed a foul.`
+    if (violator === "ME") { // if ME committed foul
+        youDisp.textContent = Number(youDisp.textContent) + 1 // YOU are allowed to shoot free throws
+    } else {
+        meDisp.textContent = Number(meDisp.textContent) + 1
+    }
+    changePossession(violator) // give the ball to foul violator after YOU shot free throws
 }

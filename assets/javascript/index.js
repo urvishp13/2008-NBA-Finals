@@ -6,7 +6,7 @@ function startGame() {
     meDisp.textContent = 0
 
     newPossession("YOU")
-
+    
     // make the NEW GAME button disappear
     newGameBtn.style.display = "none"
     // make the offensive buttons appear
@@ -22,6 +22,8 @@ function dribble() {
     click++ // function ran, so one DRIBBLE button click counted
 
     const currDribble = Math.floor( Math.random() * 31 ) - 5
+
+    console.log("click", click, ", me", me, ", you", you, ", currDribble", currDribble)
     
     if (currDribble < 0) { // if YOU randomly get a negative number of this dribble
         turnover("YOU")    // YOU caused a turnover
@@ -51,7 +53,7 @@ function defend() {
 
     const currDribble = Math.floor( Math.random() * 31 ) - 5
     
-    console.log("click", click, ", you", you, ", me", me)
+    console.log("click", click, ", me", me, ", you", you, ", currDribble", currDribble)
     
     if (currDribble < 0) { 
         turnover("ME")    
