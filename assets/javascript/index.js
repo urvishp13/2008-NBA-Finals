@@ -1,12 +1,3 @@
-const youDisp = document.getElementById("you-points")
-const meDisp = document.getElementById("me-points")
-const newGameBtn = document.getElementById("new-game-btn")
-const offenseBtns = document.getElementById("offense-btns")
-const defendBtn = document.getElementById("defend-btn")
-
-// console.log(meDisp)
-
-
 // create a start game function
 function startGame() {
     /* first possession always is given to YOU (the game player), hence why only dribble button (and not defend) button 
@@ -49,11 +40,10 @@ function dribble() {
 
     // if YOU dribbled 3 times, YOU have to shoot
     if (click === 3) {
-        shoot()
+        forcedShot()
         click = 0 // reset the DRIBBLE click count
-        // remove the DRIBBLE button from the DOM and replace it with the DEFEND button
-        dribbleBtn.style.display = "none"
-        defendBtn.style.display = "block"
+        // remove the offense buttons from the DOM and replace it with the DEFEND button
+        replaceOffenseBtns()
     }
 }
      
