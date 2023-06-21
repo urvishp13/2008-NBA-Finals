@@ -6,18 +6,21 @@ const newGameBtn = document.getElementById("new-game-btn")
 const offenseBtns = document.getElementById("offense-btns")
 const dribbleBtn = document.getElementById("dribble-btn")
 const defendBtn = document.getElementById("defend-btn")
+const liveResults = document.getElementById("live-gameplay-results")
+const possessionDisp = document.getElementById("possession")
 
 function newPossession(dribbler) {
     if (dribbler === "YOU") {
         you = givePossessionTo()
         me = putOnDefense()
+        possessionDisp.textContent = "YOU"
         replaceDefenseBtns() // put YOU on offense
     }
     else {
         me = givePossessionTo()
         you = putOnDefense()
+        possessionDisp.textContent = "ME"
         replaceOffenseBtns() // put YOU on defense
-        
     }
 }
 
@@ -93,6 +96,7 @@ function replaceDefenseBtns() {
 }
 
 function turnover(violator) {
+    liveResults.textContent = `${violator} turned the ball over.`
     // change of possession
     if (violator === "YOU") {
         changePossession("ME") 

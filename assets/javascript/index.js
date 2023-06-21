@@ -49,8 +49,7 @@ function dribble() {
 function defend() {
     click++
 
-    // const currDribble = Math.floor( Math.random() * 31 ) - 5
-    const currDribble = -1
+    const currDribble = Math.floor( Math.random() * 31 ) - 5
     
     console.log("click", click, ", you", you, ", me", me)
     

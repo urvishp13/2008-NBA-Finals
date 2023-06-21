@@ -213,7 +213,7 @@ button {
     background-repeat: no-repeat;
 }
 
-.live-gameplay-results {
+#live-gameplay-results {
     margin-top: 0;
     font-weight: bold;
     font-size: 20px;
