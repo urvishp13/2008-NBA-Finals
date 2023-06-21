@@ -103,29 +103,40 @@ function turnover(committer) {
 function foul(violator) {
     liveResults.textContent = `${violator} committed a foul.`
     if (violator === "ME") { // if ME committed foul
-        // give YOU 2 free shots
+        // give YOU 2 free throw attempt
         freeThrowBtn.style.display = "block" // make the SHOOT FT button present
-        for (let shot = 1; shot <= 2; shot++) {
-            youDisp.textContent = Number(youDisp.textContent) + shootFreeThrow("YOU") // YOU are allowed to shoot free throws
-            liveResults.textContent = `${shooter} made a ${shot} free throw(s).`
-        }
     } else { // YOU committed foul
-        // give ME 2 free shots
-        for (let shot = 1; shot <= 2; shot++) {
-            meDisp.textContent = Number(meDisp.textContent) + shootFreeThrow("ME") // ME is allowed to shoot free throws
-            liveResults.textContent = `${shooter} made a ${shot} free throw(s).`
-        }
+        // give ME 2 free throw attempts
+        shootFreeThrow("ME")
     }
-    freeThrowBtn.style.display = "none" // remove the SHOOT FT button
-    changePossession(violator) // give the ball to foul violator after YOU shot free throws
 }
 
 function shootFreeThrow(shooter) {
-    // get the probability of shot being successful
-    const probability = Math.random()
+    for (let shot = 1; shot <= 2; shot++) {
+        // get the probability of FT being successful
+        const probability = Math.random()
 
-    // if the probability > 0.5, shot is made. Increase YOUR score by num
-    if (probability > 0.5) {
-        return 1
+        // if the probability > 0.5, FT is made. Increase shooter's score by 1
+        if (probability > 0.5) {
+            if (shooter === "YOU") {
+                youDisp.textContent = Number(youDisp.textContent) + 1 // YOU are allowed to shoot free throws
+            } else {
+                meDisp.textContent = Number(meDisp.textContent) + 1 // YOU are allowed to shoot free throws
+            }
+            liveResults.textContent = `${shooter} made a free throw.`
+        } else { // if probability < 0.5, FT is missed
+            liveResults.textContent = `${shooter} missed the free throw attempt.`
+        }
+    }
+
+    freeThrowBtn.style.display = "none" // free throws done --> remove SHOOT FT button
+
+    // give the ball to foul violator after the shooter shot their free throws
+    if (shooter === "YOU") {
+        changePossession("ME")  // give ME the ball
+        defendBtn.style.display = "block" // meaning YOU are back on defense
+    } else {
+        changePossession("YOU") // give YOU the ball
+        offenseBtns.style.display = "flex" // meaning YOU have the ball again
     }
 }
