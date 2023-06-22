@@ -35,8 +35,6 @@ function dribble() {
 
     you += currDribble
 
-    console.log("click", click, ", me", me, ", you", you)
-
     // if ME committed a foul while YOU were dribbling
     if (me < 0) {
         stopOffensivePlay()
@@ -72,7 +70,6 @@ function shootFreeThrow(shooter) {
 
     // get the probability of FT being successful
     const probability = Math.random()
-    // const probability = 0.5
 
     // if the probability > 0.5, FT is made. Increase shooter's score by 1
     if (probability >= 0.5) {
@@ -85,8 +82,6 @@ function shootFreeThrow(shooter) {
     } else { // if probability < 0.5, FT is missed
         liveResults.textContent = `${shooter} missed the free throw attempt(s).`
     }
-
-    // console.log(`${shooter} shot 2 FTs`, click)
     
     if (click === 2) { // if 2 free throws have been shot
         click = 0 // reset SHOOT FT button click count for next time when allowed to shoot free throws

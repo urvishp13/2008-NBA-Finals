@@ -75,20 +75,6 @@ function forcedShot(shooter) {
     }
 }
 
-// // swap the buttons for defensive play
-// function replaceOffenseBtns() {
-//     // remove the offense buttons from the DOM and replace it with the DEFEND button
-//     offenseBtns.style.display = "none"
-//     defendBtn.style.display = "block"
-// }
-
-// // swap the buttons for offensive play
-// function replaceDefenseBtns() {
-//     // remove the DEFEND button from the DOM and replace it with the offensive buttons
-//     defendBtn.style.display = "none"
-//     offenseBtns.style.display = "flex"
-// }
-
 function beginOffensivePlay() {
     offenseBtns.style.display = "flex"
 }
