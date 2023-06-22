@@ -19,6 +19,7 @@ function newPossession(dribbler) {
         beginOffensivePlay() 
         stopDefensivePlay()
 
+        liveResults.textContent = `YOU are dribbling the ball.`
     }
     else {
         me = givePossessionTo()
@@ -27,10 +28,11 @@ function newPossession(dribbler) {
         you = putOnDefense()
         beginDefensivePlay()
         stopOffensivePlay()
+
+        liveResults.textContent = `ME is dribbling the ball.`
     }
 
     possessionDisp.textContent = dribbler
-    liveResults.textContent = `${dribbler} is dribbling the ball.`
 
     // clear the foul display now (indicates foul on previous drive)
     foulOnDisp.textContent = ""
@@ -55,22 +57,31 @@ function forcedShot(shooter) {
         // YOU > ME by 1, 2 points scored by YOU
         // change possession after every shot, regardless of if YOU scored points
     // else, vice versa
+    let pointsScored = 0
     if (shooter === "YOU") {
-        if ( (you - me) >= 10 ) {
+        if ( (you - me) >= 20 ) {
             youDisp.textContent = Number(youDisp.textContent) + 3
+            pointsScored = 3
         } else if (you > me) {
             youDisp.textContent = Number(youDisp.textContent) + 2
+            pointsScored = 2
         }
         // change in possession
         changePossession("ME")
+
+        pointsScored != 0 ? liveResults.textContent = `YOU scored ${pointsScored} points! ${liveResults.textContent}` : ""
     } else {
-        if ( (me - you) >= 10 ) {
+        if ( (me - you) >= 20 ) {
             meDisp.textContent = Number(meDisp.textContent) + 3
+            pointsScored = 3
         } else if (me > you) {
             meDisp.textContent = Number(meDisp.textContent) + 2
+            pointsScored = 2
         }
         // change in possession
         changePossession("YOU")
+        
+        pointsScored != 0 ? liveResults.textContent = `ME scored ${pointsScored} points! ${liveResults.textContent}` : ""
     }
 }
 
@@ -88,6 +99,10 @@ function beginDefensivePlay() {
 
 function stopDefensivePlay() {
     defendBtn.style.display = "none"
+}
+
+function stopFreeThrows() {
+    freeThrowBtn.style.display = "none"
 }
 
 function turnover(committer) {
@@ -113,7 +128,7 @@ function foul(violator) {
     }
     liveResults.textContent = `${violator} committed a foul. 
     ${violator === "ME" 
-    ? "YOU is shooting free throws." 
+    ? "YOU are shooting free throws." 
     : "ME shot free throws."}
     `
 }

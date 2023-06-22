@@ -40,7 +40,6 @@ function dribble() {
 
     const currDribble = Math.floor( Math.random() * 31 ) - 5
 
-    console.log("click", click, ", me", me, ", you", you, ", currDribble", currDribble)
     
     if (currDribble < 0) { // if YOU randomly get a negative number of this dribble
         turnover("YOU")    // YOU caused a turnover
@@ -63,7 +62,10 @@ function dribble() {
     if (click === 3) {
         forcedShot("YOU")
         click = 0 // reset the click count --> preparing to count defend attempts
+        return
     }
+
+    liveResults.textContent = "YOU are still dribbling the ball."
 }
 
 // this shot can be done before 3 dribbles are completed, for shooting 2-pointers/3-pointers
@@ -78,6 +80,10 @@ function shoot(num) {
 
     // after shot taken, give the ball to ME
     changePossession("ME")
+
+    if (probability > 0.5) {
+        liveResults.textContent = `YOU made a ${num}-pointer! ${liveResults.textContent}`
+    }
 }
 
 function shootFreeThrow(shooter) {
@@ -142,5 +148,8 @@ function defend() {
     if (click === 3) {
         forcedShot("ME")
         click = 0 // reset the click count --> preparing to count dribble attempts
+        return
     }
+
+    liveResults.textContent = "ME is still dribbling the ball."
 }

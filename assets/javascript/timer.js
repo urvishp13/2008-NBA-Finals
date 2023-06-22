@@ -12,6 +12,8 @@ function countdown() {
         // stop all play
         stopOffensivePlay()
         stopDefensivePlay()
+        stopFreeThrows()
+
         // reset the timer
         timer.textContent = "45"
 
