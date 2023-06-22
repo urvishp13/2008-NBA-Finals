@@ -204,6 +204,22 @@ button {
     flex-grow: 1;
 }
 
+/* /////////////// TIMER-RELATED ///////////////// */
+#timer {
+    position: absolute;
+    top: -13%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #F9FAFB;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-size: 35px;
+    color: red;
+}
+
+
+
 /* ////////////// MISCELLANEOUS STUFF //////////// */
 
 .nba-logo {

@@ -62,7 +62,6 @@ function shoot(num) {
 
     // after shot taken, give the ball to ME
     changePossession("ME")
-    liveResults.textContent = `YOU made a ${num} pointer! ${liveResults.textContent}`
 }
 
 function shootFreeThrow(shooter) {
