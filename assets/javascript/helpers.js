@@ -9,11 +9,11 @@ const defendBtn = document.getElementById("defend-btn")
 const freeThrowBtn = document.getElementById("free-throw-btn")
 const liveResults = document.getElementById("live-gameplay-results")
 const possessionDisp = document.getElementById("possession")
+const foulOnDisp = document.getElementById("foul-on")
 
 function newPossession(dribbler) {
     if (dribbler === "YOU") {
         me = putOnDefense()
-        possessionDisp.textContent = "YOU"
 
         // put YOU on offense
         you = givePossessionTo()
@@ -23,13 +23,14 @@ function newPossession(dribbler) {
     }
     else {
         me = givePossessionTo()
-        possessionDisp.textContent = "ME"
 
         // put YOU on defense
         you = putOnDefense()
         beginDefensivePlay()
         stopOffensivePlay()
     }
+
+    possessionDisp.textContent = dribbler
 }
 
 function givePossessionTo() {
@@ -37,8 +38,8 @@ function givePossessionTo() {
 }
 
 function putOnDefense() {
-    // return Math.floor( Math.random() * 61 ) - 10
-    return -1
+    return Math.floor( Math.random() * 61 ) - 10
+    // return -1
 }
 
 function changePossession(newDribbler) {
@@ -111,6 +112,7 @@ function turnover(committer) {
 
 function foul(violator) {
     liveResults.textContent = `${violator} committed a foul.`
+    foulOnDisp.textContent = violator
     if (violator === "ME") { // if ME committed foul
         // give YOU 2 free throw attempts
         freeThrowBtn.style.display = "block" // make the SHOOT FT button present

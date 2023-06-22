@@ -7,7 +7,7 @@ function startGame() {
     youDisp.textContent = 0
     meDisp.textContent = 0
 
-    newPossession("YOU")
+    newPossession("ME")
 
     // make the NEW GAME button disappear
     newGameBtn.style.display = "none"
@@ -25,6 +25,7 @@ function dribble() {
     console.log("click", click, ", me", me, ", you", you, ", currDribble", currDribble)
     
     if (currDribble < 0) { // if YOU randomly get a negative number of this dribble
+        click = 0
         turnover("YOU")    // YOU caused a turnover
         return             // possession over
     }
@@ -108,6 +109,7 @@ function defend() {
     console.log("click", click, ", me", me, ", you", you, ", currDribble", currDribble)
     
     if (currDribble < 0) { 
+        click = 0
         turnover("ME")    
         return
     }
