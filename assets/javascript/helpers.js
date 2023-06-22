@@ -31,6 +31,10 @@ function newPossession(dribbler) {
     }
 
     possessionDisp.textContent = dribbler
+    liveResults.textContent = `${dribbler} is dribbling the ball.`
+
+    // clear the foul display now (indicates foul on previous drive)
+    foulOnDisp.textContent = ""
 }
 
 function givePossessionTo() {
@@ -101,17 +105,16 @@ function stopDefensivePlay() {
 }
 
 function turnover(committer) {
-    liveResults.textContent = `${committer} turned the ball over.`
     // change of possession
     if (committer === "YOU") {
         changePossession("ME") 
     } else {
         changePossession("YOU")
     }
+    liveResults.textContent = `${committer} turned the ball over.` + " " + liveResults.textContent
 }
 
 function foul(violator) {
-    liveResults.textContent = `${violator} committed a foul.`
     foulOnDisp.textContent = violator
     if (violator === "ME") { // if ME committed foul
         // give YOU 2 free throw attempts
@@ -122,4 +125,9 @@ function foul(violator) {
             shootFreeThrow("ME")
         }
     }
+    liveResults.textContent = `${violator} committed a foul. 
+    ${violator === "ME" 
+    ? "YOU is shooting free throws." 
+    : "ME shot free throws."}
+    `
 }

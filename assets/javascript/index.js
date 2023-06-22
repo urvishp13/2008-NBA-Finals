@@ -2,12 +2,14 @@ let click = 0 // used to count number of times action buttons clicked
 
 // create a start game function
 function startGame() {
+    liveResults.textContent = ""
+    
     /* first possession always is given to YOU (the game player), hence why only dribble button (and not defend) button 
        is displayed */
     youDisp.textContent = 0
     meDisp.textContent = 0
 
-    newPossession("ME")
+    newPossession("YOU")
 
     // make the NEW GAME button disappear
     newGameBtn.style.display = "none"
