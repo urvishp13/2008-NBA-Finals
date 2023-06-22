@@ -20,6 +20,7 @@ function countdown() {
         // if the 4th period is over, allow the option to start a new game
         if (periodCounter.textContent == 4) { // (unstrict equality to compare string of 4 to number 4---just easier)
             newGameBtn.style.display = "block"
+            periodCounter.textContent = "1"
             return
         }
 
