@@ -54,7 +54,8 @@ function forcedShot(shooter) {
     // if after 3 dribbles
         // YOU > ME by 10, 3 points scored by YOU
         // YOU > ME by 1, 2 points scored by YOU
-    // change possession after every shot, regardless of if YOU scored points
+        // change possession after every shot, regardless of if YOU scored points
+    // else, vice versa
     if (shooter === "YOU") {
         if ( (you - me) >= 10 ) {
             youDisp.textContent = Number(youDisp.textContent) + 3
@@ -111,7 +112,7 @@ function turnover(committer) {
     } else {
         changePossession("YOU")
     }
-    liveResults.textContent = `${committer} turned the ball over.` + " " + liveResults.textContent
+    liveResults.textContent = `${committer} turned the ball over. ${liveResults.textContent}`
 }
 
 function foul(violator) {
