@@ -1,4 +1,5 @@
 const timer = document.getElementById("timer")
+const newGameBtn = document.getElementById("new-game-btn")
 
 // create a countdown timer that runs from 45 seconds to 0 seconds
 function countdown() {
@@ -11,9 +12,16 @@ function countdown() {
         // stop all play
         stopOffensivePlay()
         stopDefensivePlay()
+        // reset the timer
+        timer.textContent = "45"
+
+        // if the 4th period is over, allow the option to start a new game
+        if (periodCounter.textContent == 4) { // (unstrict equality to compare string of 4 to number 4---just easier)
+            newGameBtn.style.display = "block"
+            return
+        }
+
         // allow functionality to start the next period
         startPeriodBtn.style.display = "block"
-        // reset the timer
-        timer.textContent = "15"
     }
 }

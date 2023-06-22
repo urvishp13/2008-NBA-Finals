@@ -2,7 +2,6 @@ let you
 let me
 const youDisp = document.getElementById("you-points")
 const meDisp = document.getElementById("me-points")
-const newGameBtn = document.getElementById("new-game-btn")
 const offenseBtns = document.getElementById("offense-btns")
 const dribbleBtn = document.getElementById("dribble-btn")
 const defendBtn = document.getElementById("defend-btn")
