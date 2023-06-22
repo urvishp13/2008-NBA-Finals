@@ -83,6 +83,8 @@ function shoot(num) {
 
     if (probability > 0.5) {
         liveResults.textContent = `YOU made a ${num}-pointer! ${liveResults.textContent}`
+    } else {
+        liveResults.textContent = `YOU missed a ${num}-pointer. ${liveResults.textContent}`
     }
 }
 
@@ -99,19 +101,27 @@ function shootFreeThrow(shooter) {
         } else {
             meDisp.textContent = Number(meDisp.textContent) + 1 // YOU are allowed to shoot free throws
         }
-        liveResults.textContent = `${shooter} made a free throw(s).`
-    } else { // if probability < 0.5, FT is missed
-        liveResults.textContent = `${shooter} missed the free throw attempt(s).`
+        liveResults.textContent = `YOU made a free throw.` // this will get overwritten for ME once this method is finished running
+    } else {
+        liveResults.textContent = `YOU missed a free throw.` // this will get overwritten for ME once this method is finished running
     }
     
     if (click === 2) { // if 2 free throws have been shot
         click = 0 // reset SHOOT FT button click count for next time when allowed to shoot free throws
         
-        // don't allow YOU/ME to shoot anymore free throws
+        // don't allow YOU to shoot anymore free throws
         freeThrowBtn.style.display = "none" // free throws done --> remove SHOOT FT button
         // give the ball to foul violator after the shooter shot their free throws
         if (shooter === "YOU") {
             changePossession("ME")  // give ME the ball
+
+            // on the second FT shot, if missed
+            if (probability > 0.5) {
+                liveResults.textContent = `YOU made a free throw. ${liveResults.textContent}`
+            } else {
+                liveResults.textContent = `YOU missed a free throw. ${liveResults.textContent}`
+            }
+
             beginDefensivePlay() // YOU are back on defense
         } else {
             changePossession("YOU") // give YOU the ball

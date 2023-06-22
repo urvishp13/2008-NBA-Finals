@@ -43,8 +43,8 @@ function givePossessionTo() {
 }
 
 function putOnDefense() {
-    return Math.floor( Math.random() * 61 ) - 10
-    // return -1
+    // return Math.floor( Math.random() * 61 ) - 10
+    return -1
 }
 
 function changePossession(newDribbler) {
