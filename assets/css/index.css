@@ -205,6 +205,7 @@ button {
 }
 
 /* /////////////// TIMER-RELATED ///////////////// */
+
 #timer {
     position: absolute;
     top: -13%;
@@ -216,9 +217,29 @@ button {
     border: 2px solid black;
     font-size: 35px;
     color: red;
+    z-index: 1;
 }
 
+/* /////////// PERIOD COUNTER-RELATED ///////////// */
 
+#period-container {
+    position: absolute;
+    background: #F9FAFB;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 2px solid black;
+    color: red;
+    right: 35%;
+    top: -11.5%;
+}
+
+#period-container p {
+    margin: 0;
+}
+
+#period-counter {
+    font-size: 25px;
+}
 
 /* ////////////// MISCELLANEOUS STUFF //////////// */
 
