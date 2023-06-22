@@ -136,8 +136,6 @@ function defend() {
 
     const currDribble = Math.floor( Math.random() * 31 ) - 5
     
-    console.log("click", click, ", me", me, ", you", you, ", currDribble", currDribble)
-    
     if (currDribble < 0) { 
         turnover("ME") 
         click = 0   
