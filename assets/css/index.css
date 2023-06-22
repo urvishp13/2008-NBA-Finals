@@ -189,7 +189,8 @@ button {
 
 #offense-btns,
 #defend-btn,
-#free-throw-btn {
+#free-throw-btn,
+#start-period-btn {
     display: none;
 }
 

@@ -1,21 +1,34 @@
 let click = 0 // used to count number of times action buttons clicked
-
-youDisp.textContent = 0
-meDisp.textContent = 0
+const startPeriodBtn = document.getElementById("start-period-btn")
+const periodCounter = document.getElementById("period-counter")
 
 // create a start game function
 function startGame() {
     liveResults.textContent = ""
 
-    // start timer
-    clock = setInterval(countdown, 1000)
+    // // start timer
+    // clock = setInterval(countdown, 1000)
     
-    /* first possession always is given to YOU (the game player), hence why only dribble button (and not defend) button 
-       is displayed */
-    newPossession("YOU")
+    youDisp.textContent = 0
+    meDisp.textContent = 0
 
     // make the NEW GAME button disappear
     newGameBtn.style.display = "none"
+
+    startNewPeriod()
+}
+
+function startNewPeriod() {
+    // start the timer
+    clock = setInterval(countdown, 1000)
+    
+    // increment the period count by 1
+    periodCounter.textContent = Number(periodCounter.textContent) + 1
+
+    // first possession always is given to YOU (the game player)
+    newPossession("YOU")
+
+    startPeriodBtn.style.display = "none"
 }
 
 // create a dribble function 
