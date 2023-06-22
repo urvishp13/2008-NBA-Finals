@@ -12,16 +12,23 @@ const possessionDisp = document.getElementById("possession")
 
 function newPossession(dribbler) {
     if (dribbler === "YOU") {
-        you = givePossessionTo()
         me = putOnDefense()
         possessionDisp.textContent = "YOU"
-        replaceDefenseBtns() // put YOU on offense
+
+        // put YOU on offense
+        you = givePossessionTo()
+        beginOffensivePlay() 
+        stopDefensivePlay()
+
     }
     else {
         me = givePossessionTo()
-        you = putOnDefense()
         possessionDisp.textContent = "ME"
-        replaceOffenseBtns() // put YOU on defense
+
+        // put YOU on defense
+        you = putOnDefense()
+        beginDefensivePlay()
+        stopOffensivePlay()
     }
 }
 
@@ -30,8 +37,8 @@ function givePossessionTo() {
 }
 
 function putOnDefense() {
-    return Math.floor( Math.random() * 61 ) - 10
-    // return -1
+    // return Math.floor( Math.random() * 61 ) - 10
+    return -1
 }
 
 function changePossession(newDribbler) {
@@ -62,25 +69,25 @@ function forcedShot(shooter) {
     }
 }
 
-// swap the buttons for defensive play
-function replaceOffenseBtns() {
-    // remove the offense buttons from the DOM and replace it with the DEFEND button
-    offenseBtns.style.display = "none"
-    defendBtn.style.display = "block"
-}
+// // swap the buttons for defensive play
+// function replaceOffenseBtns() {
+//     // remove the offense buttons from the DOM and replace it with the DEFEND button
+//     offenseBtns.style.display = "none"
+//     defendBtn.style.display = "block"
+// }
 
-// swap the buttons for offensive play
-function replaceDefenseBtns() {
-    // remove the DEFEND button from the DOM and replace it with the offensive buttons
-    defendBtn.style.display = "none"
-    offenseBtns.style.display = "flex"
-}
+// // swap the buttons for offensive play
+// function replaceDefenseBtns() {
+//     // remove the DEFEND button from the DOM and replace it with the offensive buttons
+//     defendBtn.style.display = "none"
+//     offenseBtns.style.display = "flex"
+// }
 
 function beginOffensivePlay() {
     offenseBtns.style.display = "flex"
 }
 
-function removeOffensivePlay() {
+function stopOffensivePlay() {
     offenseBtns.style.display = "none"
 }
 
@@ -88,7 +95,7 @@ function beginDefensivePlay() {
     defendBtn.style.display = "block"
 }
 
-function removeDefensivePlay() {
+function stopDefensivePlay() {
     defendBtn.style.display = "none"
 }
 
@@ -109,6 +116,8 @@ function foul(violator) {
         freeThrowBtn.style.display = "block" // make the SHOOT FT button present
     } else { // YOU committed foul
         // give ME 2 free throw attempts
-        shootFreeThrow("ME")
+        for (let shot = 1; shot <= 2; shot++) {
+            shootFreeThrow("ME")
+        }
     }
 }

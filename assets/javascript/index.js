@@ -1,3 +1,5 @@
+let click = 0 // used to count number of times action buttons clicked
+
 // create a start game function
 function startGame() {
     /* first possession always is given to YOU (the game player), hence why only dribble button (and not defend) button 
@@ -9,11 +11,7 @@ function startGame() {
 
     // make the NEW GAME button disappear
     newGameBtn.style.display = "none"
-    // make the offensive buttons appear
-    offenseBtns.style.display = "flex"
 }
-
-let click = 0 // used to count number of times action buttons clicked
 
 // create a dribble function 
 function dribble() {
@@ -38,7 +36,7 @@ function dribble() {
     // if ME committed a foul while YOU were dribbling
     if (me < 0) {
         click = 0 // reset click count to count 2 free throw attempts
-        removeOffensivePlay()
+        stopOffensivePlay()
         foul("ME")
         return
     }
@@ -68,8 +66,8 @@ function shootFreeThrow(shooter) {
     click++
 
     // get the probability of FT being successful
-    // const probability = Math.random()
-    const probability = 0.5
+    const probability = Math.random()
+    // const probability = 0.5
 
     // if the probability > 0.5, FT is made. Increase shooter's score by 1
     if (probability >= 0.5) {
@@ -78,12 +76,12 @@ function shootFreeThrow(shooter) {
         } else {
             meDisp.textContent = Number(meDisp.textContent) + 1 // YOU are allowed to shoot free throws
         }
-        liveResults.textContent = `${shooter} made a free throw.`
+        liveResults.textContent = `${shooter} made a free throw(s).`
     } else { // if probability < 0.5, FT is missed
-        liveResults.textContent = `${shooter} missed the free throw attempt.`
+        liveResults.textContent = `${shooter} missed the free throw attempt(s).`
     }
 
-    // console.log(`${shooter} shot 2 FTs`, click)
+    console.log(`${shooter} shot 2 FTs`, click)
     
     if (click === 2) { // if 2 free throws have been shot
         click = 0 // reset SHOOT FT button click count for next time when allowed to shoot free throws
@@ -119,6 +117,8 @@ function defend() {
     // console.log("click", click, ", you", you, ", me", me)
 
     if (you < 0) {
+        click = 0
+        stopDefensivePlay()
         foul("YOU")
         return
     }
