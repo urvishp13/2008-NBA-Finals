@@ -21,5 +21,5 @@ My additions were:<br>
 
 ---
 
-The Los Angelos Lakers, Boston Celtics, and NBA logos are from [freebiesubbly.com](https://freebiesupply.com/)
-The color palette for the gameplay buttons are from [SchemeColor](https://www.schemecolor.com/national-basketball-association-logo-colors.php)
+The Los Angelos Lakers, Boston Celtics, and NBA logos are from [freebiesubbly.com](https://freebiesupply.com/).<br>
+The color palette for the gameplay buttons are from [SchemeColor](https://www.schemecolor.com/national-basketball-association-logo-colors.php).
