@@ -19,7 +19,7 @@ function newPossession(dribbler) {
         beginOffensivePlay() 
         stopDefensivePlay()
 
-        liveResults.textContent = `YOU are dribbling the ball.`
+        liveResults.textContent = `YOU have the ball.`
     }
     else {
         me = givePossessionTo()
@@ -29,7 +29,7 @@ function newPossession(dribbler) {
         beginDefensivePlay()
         stopOffensivePlay()
 
-        liveResults.textContent = `ME is dribbling the ball.`
+        liveResults.textContent = `ME has the ball.`
     }
 
     possessionDisp.textContent = dribbler

@@ -65,7 +65,7 @@ function dribble() {
         return
     }
 
-    liveResults.textContent = "YOU are still dribbling the ball."
+    liveResults.textContent = "YOU still have the ball."
 }
 
 // this shot can be done before 3 dribbles are completed, for shooting 2-pointers/3-pointers
@@ -159,5 +159,5 @@ function defend() {
         return
     }
 
-    liveResults.textContent = "ME is still dribbling the ball."
+    liveResults.textContent = "ME still has the ball."
 }
