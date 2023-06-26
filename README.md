@@ -6,15 +6,15 @@ Okay. You made it! You're in the NBA Finals! Now it's time to beat your foe, the
 
 This project initially started with a design given by the Scrimba Frontend Development bootcamp.
 
-The requirements were:
-✅ Build from "scratch" (based off a Figma file)
-✅ Follow the Figma file design
-✅ Make 6 increment buttons functional
+The requirements were:<br>
+✅ Build from "scratch" (based off a Figma file)<br>
+✅ Follow the Figma file design<br>
+✅ Make 6 increment buttons functional<br>
 
-Some stretch goals were:
-✅ Add a "New Game" button
-✅ Add a few more counters (eg. timer, period)
-✅ Change the design
+Some stretch goals were:<br>
+✅ Add a "New Game" button<br>
+✅ Add a few more counters (eg. timer, period)<br>
+✅ Change the design<br>
 
-My additions were:
-✅ Turn into an interactive game
+My additions were:<br>
+✅ Turn into an interactive game<br>
