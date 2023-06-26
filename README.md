@@ -17,4 +17,4 @@ Some stretch goals were:<br>
 ✅ Change the design<br>
 
 My additions were:<br>
-✅ Turn into an interactive game<br>
+✅ Turn into an interactive game that emulated a real basketball experience<br>
