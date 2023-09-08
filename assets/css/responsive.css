@@ -1,0 +1,54 @@
+@font-face {
+    font-family: AdvancedLedBoard7;
+    src: url("../fonts/advanced_led_board-7.ttf");
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    color: #111827;
+}
+
+h1 {
+    margin: 0;
+    padding: 21px;
+    background: #F9FAFB;
+}
+
+/* /////////////// SETTING THE BACKGROUND //////////////// */
+
+.background-container {
+    height: calc(100vh - 76px);  /* include in case the svh in bottom line is not supported by browsers, subtracted h1 dimensions */
+}
+
+.background-lakers {
+    background: #FDB927;
+    height: 50%;
+}
+
+.background-celtics {
+    background: #008248;
+    height: 50%;
+}
+
+/* add transparent effect on top of background colors */
+.background-container .wrapper {
+    background: rgba(255, 255, 255, 0.234);
+    height: 100%;
+}
+
+.background-lakers .logo {
+    background: url("../images/lakers-logo.png");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.background-celtics .logo {
+    background-image: url("../images/celtics-logo.png");
+    background-size: cover;
+    background-position: center;
+    width: 65%;
+    height: 100%;
+    margin: 0 auto;
+}
