@@ -52,3 +52,44 @@ h1 {
     height: 100%;
     margin: 0 auto;
 }
+
+/* /////////////////// CREATING THE SCOREBOARD BORDERS ////////////////////// */
+
+.content-container {
+    position: relative;
+}
+
+.scoreboard-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 80%;
+}
+
+.scoreboard-borders {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.scoreboard-border-lakers {
+    width: 100%;
+    height: 50%;
+    background: #552583;
+}
+
+.scoreboard-border-celtics {
+    width: 100%;
+    height: 50%;
+    background: #006739;
+}
+
+.scoreboard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+}
