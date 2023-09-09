@@ -176,3 +176,43 @@ button {
 .dribble-btn {
     flex: 100%;
 }
+
+/* /////////////// TIMER-RELATED ///////////////// */
+
+.timer {
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #F9FAFB;
+    padding: .5em .6em;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-size: 1.5rem;
+    color: red;
+    z-index: 1;
+}
+
+/* /////////// PERIOD COUNTER-RELATED ///////////// */
+
+.period-container {
+    display: flex;
+    align-items: center;
+    gap: .25em;
+    position: absolute;
+    top: -5%;
+    left: 58%;
+    background: #F9FAFB;
+    padding: .5em 1em;
+    border-radius: 5px;
+    border: 2px solid black;
+    color: red;
+}
+
+.period-container p {
+    margin: 0;
+}
+
+.period-counter {
+    font-size: 1.25rem;
+}
