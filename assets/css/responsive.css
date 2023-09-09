@@ -148,3 +148,31 @@ h1 {
     line-height: 1.5;
     color: #BE123C;
 }
+
+/* ////////////// BUTTON(S) RELATED /////////////////////// */
+
+button {
+    padding: .5em 1em;
+    background: #c9082a;
+    border: 3px solid #17408b;
+    border-radius: 3px;
+    color: #F9FAFB;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.offense-btns {
+    flex-wrap: wrap;
+    gap: .6em;
+    display: none;
+}
+
+.dribble-btn,
+.shot {
+    flex: 1;
+}
+
+.dribble-btn {
+    flex: 100%;
+}
