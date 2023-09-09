@@ -143,6 +143,9 @@ h1 {
 }
 
 .display-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: AdvancedLedBoard7;
     font-size: 2rem;
     margin: 0 auto;
