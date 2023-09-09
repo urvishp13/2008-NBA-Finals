@@ -3,6 +3,10 @@
     src: url("../fonts/advanced_led_board-7.ttf");
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     text-align: center;
@@ -92,4 +96,55 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
+    width: 85%;
+}
+
+/* //////////// CREATING THE SCOREBOARD ///////////// */
+
+.region {
+    display: flex;
+    justify-content: space-between;
+    background: rgb(212, 212, 212);
+    width: 75%;
+    margin: 0 auto .5em;
+    padding: 1em;
+    gap: 1em;
+}
+
+.display {
+    background: white;
+    width: 50%;
+}
+
+.display-heading {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.offense-btns,
+.defend-btn,
+.free-throw-btn,
+.start-period-btn {
+    display: none;
+}
+
+.region-5 {
+    display: inline-block;
+}
+
+.region-6 {
+    display: none;
+}
+
+.display-heading {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.display-content {
+    font-family: AdvancedLedBoard7;
+    font-size: 2rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: #BE123C;
 }
