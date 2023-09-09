@@ -97,6 +97,8 @@ h1 {
     transform: translate(-50%, -50%);
     background: white;
     width: 85%;
+    padding: 1.5em .75em;
+    font-family: 'Inter', sans-serif;
 }
 
 /* //////////// CREATING THE SCOREBOARD ///////////// */
@@ -105,7 +107,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     background: rgb(212, 212, 212);
-    width: 75%;
+    width: 90%;
     margin: 0 auto .5em;
     padding: 1em;
     gap: 1em;
@@ -137,7 +139,6 @@ h1 {
 }
 
 .display-heading {
-    font-family: 'Inter', sans-serif;
     font-weight: 600;
 }
 
@@ -160,6 +161,7 @@ button {
     font-size: 1rem;
     cursor: pointer;
     margin: 0 auto;
+    width: 100%;
 }
 
 .offense-btns {
@@ -214,5 +216,13 @@ button {
 }
 
 .period-counter {
+    font-size: 1.25rem;
+}
+
+/* ////////////// MISCELLANEOUS STUFF //////////// */
+
+.live-gameplay-results {
+    margin: .5em 0 0;
+    font-weight: 600;
     font-size: 1.25rem;
 }
