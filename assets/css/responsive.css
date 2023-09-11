@@ -170,7 +170,7 @@ button {
 
 .timer {
     position: absolute;
-    top: -5%;
+    top: -2%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #F9FAFB;
@@ -179,7 +179,10 @@ button {
     border: 2px solid grey;
     font-size: 1.5rem;
     color: red;
-    z-index: 1;
+}
+
+.time {
+    margin: 0;
 }
 
 /* /////////// PERIOD COUNTER-RELATED ///////////// */
@@ -189,9 +192,10 @@ button {
     align-items: center;
     gap: .25em;
     position: absolute;
-    top: -5%;
-    left: 58%;
+    top: 10%;
+    left: 100%;
     background: #F9FAFB;
+    font-size: 1rem;
     padding: .5em 1em;
     border-radius: 5px;
     border: 2px solid grey;
