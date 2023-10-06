@@ -57,7 +57,7 @@ h1 {
     margin: 0 auto;
 }
 
-/* /////////////////// CREATING THE SCOREBOARD BORDERS ////////////////////// */
+/* /////////////////// POSITIONING THE SCOREBOARD BORDERS ////////////////////// */
 
 .content-container {
     position: relative;
@@ -344,4 +344,25 @@ button {
         flex: 100%;
     }
 
+}
+
+@media (min-width: 1300px) {
+    
+    .scoreboard {
+        display: grid;
+        grid-template-rows: 1fr auto;
+    }
+
+    .display-heading {
+        font-size: 1.5rem;
+    }
+
+    .display-content {
+        font-size: 3rem;
+    }
+
+    button {
+        width: 50%;
+    }
+    
 }
