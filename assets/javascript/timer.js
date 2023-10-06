@@ -1,4 +1,4 @@
-const timer = document.getElementById("timer")
+const timer = document.getElementById("time")
 const newGameBtn = document.getElementById("new-game-btn")
 
 // create a countdown timer that runs from 45 seconds to 0 seconds
