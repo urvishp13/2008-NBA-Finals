@@ -366,3 +366,81 @@ button {
     }
     
 }
+
+@media (max-height: 480px) and (orientation: landscape) {
+
+    .background-container {
+        display: flex;
+    }
+
+    .background-container > * {
+        flex: 50%;
+        height: 100%;
+    }
+
+    .scoreboard {
+        width: 100%;
+    }
+
+    .dynamic-elements-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "me  you  btns"
+            "pos foul btns";
+    }
+
+    .region {
+        flex-direction: row;
+    }
+
+    .region-1 {
+        grid-area: me;
+    }
+
+    .region-2 {
+        grid-area: you;
+    }
+
+    .region-3 {
+        grid-area: pos;
+    }
+
+    .region-4 {
+        grid-area: foul;
+        line-height: unset;
+    }
+
+    .region-3 .display-content,
+    .region-4 .display-content {
+        padding: 0 .5em;
+    }
+
+    .region-5 {
+        grid-area: btns;
+        display: flex;
+    }
+
+    .region-6 {
+        display: none;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .offense-btns {
+        flex-wrap: wrap;
+    }
+
+    .offense-btns > * {
+        flex: 100%;
+    }
+
+    .display {
+        height: 100%;
+        width: 50%;
+    }
+
+}
