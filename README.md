@@ -26,10 +26,10 @@ Add functionality to the buttons on the webpage. Make the scoreboard based off t
 
 ### Screenshot
 
-![Desktop View of game](assets/snapshots/image.png)
-![Intermediate View of game](assets/snapshots/image-2.png)
-![Mobile View of game](assets/snapshots/image-5.png)
-![Landscape mobile view of game](assets/snapshots/landscape-mobile.png)
+![Desktop View of game](assets/snapshots/desktop-view.png)
+![Tablet View of game](assets/snapshots/tablet-view.png)
+![Mobile View of game](assets/snapshots/mobile-view.png)
+![Landscape mobile view of game](assets/snapshots/landscape-view.png)
 
 ### Links
 
